@@ -6,8 +6,8 @@ import * as bs58 from "bs58";
 
 describe('solana-twitter', () => {
     // Configure the client to use the local cluster.
-    anchor.setProvider(anchor.Provider.env());
-    const program = anchor.workspace.SolanaTwitter as Program<SolanaTwitter>;
+    anchor.setProvider(anchor.AnchorProvider.env());
+    const program = anchor.workspace.SolanaTwitter;
     const sendTweet = async (author, topic, content) => {
         const tweet = anchor.web3.Keypair.generate();
         await program.rpc.sendTweet(topic, content, {
