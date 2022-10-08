@@ -49,9 +49,30 @@ const { connected } = useWallet()
                 </svg>
                 <div class="text-xl hidden md:block">Profile</div>
             </router-link>
+            
+            
         </div>
         <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
             <wallet-multi-button></wallet-multi-button>
+        </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>Advertisements:</p>
+        </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>___________________________________</p>        
+            </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>Identaris - A ledger with built-in biometric authentication. Easy and Secure!</p>
+        </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>___________________________________</p>        
+            </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>Neo Tokyo - Crypto Gaming Illuminati </p>
+            <a href="https://neotokyo.codes/">https://neotokyo.codes/</a>
+        </div>
+        <div class="fixed bottom-8 right-8 md:static w-48 md:w-full">
+            <p>___________________________________</p>
         </div>
     </aside>
 </template>

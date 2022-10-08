@@ -10,7 +10,7 @@ export const fetchTweets = async (filters = []) => {
     return tweets.map(tweet => new Tweet(tweet.publicKey, tweet.account))
 }
 
-export const paginateTweets = (filters = [], perPage = 6, onNewPage = () => {}) => {
+export const paginateTweets = (filters = [], perPage = 10, onNewPage = () => {}) => {
     filters = ref(filters)
     const { program, connection } = useWorkspace()
     const page = ref(0)

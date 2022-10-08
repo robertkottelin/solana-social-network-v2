@@ -100,19 +100,7 @@
       }
     }
   ],
-  "errors": [
-    {
-      "code": 6000,
-      "name": "TopicTooLong",
-      "msg": "The provided topic should be 50 characters long maximum."
-    },
-    {
-      "code": 6001,
-      "name": "ContentTooLong",
-      "msg": "The provided content should be 280 characters long maximum."
-    }
-  ],
   "metadata": {
-    "address": "BxnMyazpxRDcr4wtX2ok7DXGEMfuo4Ssi5uWe8kcKTAe"
+    "address": "CB16syM8RTQ31VsGYd1tTqG9nEHEyd8rq8k4tamDNRq4"
   }
 }
