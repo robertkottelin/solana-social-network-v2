@@ -24,6 +24,7 @@ pub mod solana_twitter {
         tweet.timestamp = clock.unix_timestamp;
         tweet.topic = topic;
         tweet.content = content;
+        // tweet.likes = 0;
 
         Ok(())
     }
@@ -81,6 +82,7 @@ pub struct Tweet {
     pub timestamp: i64,
     pub topic: String,
     pub content: String,
+    // pub likes: i64,
 }
 
 const DISCRIMINATOR_LENGTH: usize = 8;
