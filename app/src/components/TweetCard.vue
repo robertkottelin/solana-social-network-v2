@@ -28,7 +28,10 @@ const onDelete = async () => {
     emit('delete', tweet.value)
 }
 const onLike = async () => {
-    await likeTweet(tweet);
+    // console.log(tweet.value)
+    // console.log("I was clicked")
+    await likeTweet(tweet.value);
+
     // emit('like', tweet.value)
 }
 

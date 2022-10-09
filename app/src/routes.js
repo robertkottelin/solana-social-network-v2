@@ -30,3 +30,4 @@ export default [
         component: require('@/components/PageNotFound').default,
     },
 ]
+
