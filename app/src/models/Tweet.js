@@ -8,6 +8,7 @@ export class Tweet
         this.timestamp = accountData.timestamp.toString()
         this.topic = accountData.topic
         this.content = accountData.content
+        this.likes = accountData.likes
     }
 
     get key () {

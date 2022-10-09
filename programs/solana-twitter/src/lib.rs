@@ -11,7 +11,6 @@ pub mod solana_twitter {
         let tweet: &mut Account<Tweet> = &mut ctx.accounts.tweet;
         let author: &Signer = &ctx.accounts.author;
         let clock: Clock = Clock::get().unwrap();
-
         if topic.chars().count() > 50 {
             // return Err(MyErrorCode::TopicTooLong.into())
         }
@@ -19,34 +18,34 @@ pub mod solana_twitter {
         if content.chars().count() > 280 {
             // return Err(MyErrorCode::ContentTooLong.into())
         }
-
         tweet.author = *author.key;
         tweet.timestamp = clock.unix_timestamp;
         tweet.topic = topic;
         tweet.content = content;
-        // tweet.likes = 0;
-
+        tweet.likes = 0;
         Ok(())
     }
 
     pub fn update_tweet(ctx: Context<UpdateTweet>, topic: String, content: String) -> ProgramResult {
         let tweet: &mut Account<Tweet> = &mut ctx.accounts.tweet;
-
         if topic.chars().count() > 50 {
             // return Err(ErrorCode::TopicTooLong.into())
         }
-
         if content.chars().count() > 280 {
             // return Err(ErrorCode::ContentTooLong.into())
         }
-
         tweet.topic = topic;
         tweet.content = content;
-
         Ok(())
     }
 
     pub fn delete_tweet(_ctx: Context<DeleteTweet>) -> ProgramResult {
+        Ok(())
+    }
+
+    pub fn like_tweet(ctx: Context<LikeTweet>) -> ProgramResult {
+        let tweet: &mut Account<Tweet> = &mut ctx.accounts.tweet;
+        tweet.likes += 1;
         Ok(())
     }
 }
@@ -76,13 +75,20 @@ pub struct DeleteTweet<'info> {
     pub author: Signer<'info>,
 }
 
+#[derive(Accounts)]
+pub struct LikeTweet<'info> {
+    #[account(mut, has_one = author)]
+    pub tweet: Account<'info, Tweet>,
+    pub author: Signer<'info>,
+}
+
 #[account]
 pub struct Tweet {
     pub author: Pubkey,
     pub timestamp: i64,
     pub topic: String,
     pub content: String,
-    // pub likes: i64,
+    pub likes: i64,
 }
 
 const DISCRIMINATOR_LENGTH: usize = 8;

@@ -72,6 +72,22 @@
         }
       ],
       "args": []
+    },
+    {
+      "name": "likeTweet",
+      "accounts": [
+        {
+          "name": "tweet",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": []
     }
   ],
   "accounts": [
@@ -95,6 +111,10 @@
           {
             "name": "content",
             "type": "string"
+          },
+          {
+            "name": "likes",
+            "type": "i64"
           }
         ]
       }
