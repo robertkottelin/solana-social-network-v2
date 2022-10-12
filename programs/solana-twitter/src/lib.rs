@@ -77,7 +77,7 @@ pub struct DeleteTweet<'info> {
 
 #[derive(Accounts)]
 pub struct LikeTweet<'info> {
-    #[account(mut, has_one = author)]
+    #[account(mut)]
     pub tweet: Account<'info, Tweet>,
     pub author: Signer<'info>,
 }
